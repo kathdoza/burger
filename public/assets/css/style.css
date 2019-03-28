@@ -1,0 +1,19 @@
+body {
+   background: #c9e0f5;
+}
+.eatburger {
+    float: right;
+}
+
+.jumbotron{
+   background: #bedaf5;
+    background-image: url("../images/krabbycar.png");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.col-md-12 {
+    background: white;
+}

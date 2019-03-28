@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1>Eat the Krabby Patty</h1>
+        <h2>Make it, Devour It</h2>
+        <br>
+        <h2>Make a Krabby Patty</h2>
+        <panel>
+            <form class="create-form">
+                <div class="form-group">
+                    <label for="newburger" id="color-override">New Burger:</label>
+                    <input type="text" id="newburger" name="burger">
+                    <button type="submit" class="btn btn-primary" id="addburger"><span
+                            class="fa fa-sign-in-alt"></span></button>
+                </div>
+            </form>
+        </panel>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading" id="lefthead"><strong>New Burgers</strong></div>
+                    <div class="panel-body">
+                        <ul>
+                            {{#each burgers}}
+                            {{#unless devoured}}
+                            <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+                            <button type="button" class="eatburger btn btn-danger" id="eatbutton"
+                                data-id="{{this.id}}"><span class="fa fa-utensils"></span></button>
+                            <hr>
+                            {{/unless}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading" id="righthead"><strong>Devoured Burgers</strong></div>
+                    <div class="panel-body">
+                        <ul>
+                            {{#each burgers}}
+                            {{#if devoured}}
+                            <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+                            <hr>
+                            {{/if}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
